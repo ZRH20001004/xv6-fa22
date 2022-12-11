@@ -1,0 +1,9 @@
+1. usertrap()
+
+2. 7
+
+3. user mode
+
+4. lw	s2,0(zero) s2
+
+5.initcode 1

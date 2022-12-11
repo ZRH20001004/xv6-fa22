@@ -1,7 +1,8 @@
 {
     "files.associations": {
         "defs.h": "c",
-        "user.h": "c"
+        "user.h": "c",
+        "memlayout.h": "c"
     },
     "C_Cpp.errorSquiggles": "disabled"
 }
