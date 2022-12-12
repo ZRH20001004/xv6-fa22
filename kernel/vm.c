@@ -61,7 +61,7 @@ kvminit(void)
 void
 kvminithart()
 {
-  // wait for any previous writes to the page table memory to finish.
+  // wait for any previous writes to the page table memory to finish.刷新TLB.
   sfence_vma();
 
   w_satp(MAKE_SATP(kernel_pagetable));
