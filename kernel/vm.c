@@ -121,6 +121,8 @@ walkaddr(pagetable_t pagetable, uint64 va)
     return 0;
   if((*pte & PTE_U) == 0)
     return 0;
+  //如果pte上的地址可以被访问，设置accessed bit
+  *pte = *pte | PTE_A;
   pa = PTE2PA(*pte);
   return pa;
 }
