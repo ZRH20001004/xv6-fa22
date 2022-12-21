@@ -55,6 +55,11 @@ binit(void)
 // Look through buffer cache for block on device dev.
 // If not found, allocate a buffer.
 // In either case, return locked buffer.
+//不变量(invariants)：每个磁盘扇区最多有一个缓存缓冲区
+//Bget的从第一个检查块是否缓存的循环到第二个声明块现在已缓存
+//（通过设置dev、blockno和refcnt）的循环，一直持有bcache.lock
+//来确保此不变量。这会导致检查块是否存在以及（如果不存在）指定一
+//个缓冲区来存储块具有原子性。
 static struct buf*
 bget(uint dev, uint blockno)
 {
